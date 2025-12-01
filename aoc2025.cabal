@@ -15,11 +15,16 @@ extra-doc-files:    CHANGELOG.md
 common warnings
     ghc-options: -Wall
 
-executable 1
+executable 1a
     import:           warnings
-    main-is:          Main.hs
-    -- other-modules:
-    -- other-extensions:
+    main-is:          a.hs
+    build-depends:    base ^>=4.20.2.0
+    hs-source-dirs:   1
+    default-language: GHC2024
+
+executable 1b
+    import:           warnings
+    main-is:          b.hs
     build-depends:    base ^>=4.20.2.0
     hs-source-dirs:   1
     default-language: GHC2024
