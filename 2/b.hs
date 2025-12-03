@@ -5,21 +5,25 @@ dropLast [] = []
 dropLast [_] = []
 dropLast (x : xs) = x : dropLast xs
 
-trimLeadingZeros :: String -> String
-trimLeadingZeros ('0' : xs) = xs
-trimLeadingZeros xs = xs
-
 isValid :: Int -> Bool
 isValid x =
   let xs = show x
       len = length xs
-   in if odd len
-        then False
-        else isValid' (take (len `div` 2) xs) (drop (len `div` 2) xs)
+   in any (>1) [patternOccurances (take x xs) xs | x <- [1 .. len]]
 
-isValid' :: String -> String -> Bool
-isValid' [] [] = True
-isValid' (x : xs) (y : ys) = if x == y then isValid' xs ys else False
+
+-- finds all occurances of a pattern in a string, provided that the string is made up only of the pattern
+-- if the string is not made up only of the pattern, returns 0
+-- otherwise the number of occurancse of the pattern are returned
+patternOccurances :: String -> String -> Int
+patternOccurances pat xs = patternOccurances' pat xs 0
+
+patternOccurances' :: String -> String -> Int -> Int
+patternOccurances' pat xs occ
+  | length xs == 0 = occ
+  | (length xs) `mod` (length pat) /= 0 = 0
+  | take (length pat) xs /= pat = 0
+  | otherwise = patternOccurances' pat (drop (length pat) xs) (occ + 1)
 
 main :: IO ()
 main = do
