@@ -70,3 +70,10 @@ executable 4b
     build-depends:    base ^>=4.20.2.0
     hs-source-dirs:   4
     default-language: GHC2024
+
+executable 5a
+    import:           warnings
+    main-is:          a.hs
+    build-depends:    base ^>=4.20.2.0,split
+    hs-source-dirs:   5
+    default-language: GHC2024
