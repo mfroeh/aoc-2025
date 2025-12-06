@@ -91,3 +91,10 @@ executable 6a
     build-depends:    base ^>=4.20.2.0,split
     hs-source-dirs:   6
     default-language: GHC2024
+
+executable 6b
+    import:           warnings
+    main-is:          b.hs
+    build-depends:    base ^>=4.20.2.0,split
+    hs-source-dirs:   6
+    default-language: GHC2024
