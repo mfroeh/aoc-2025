@@ -106,3 +106,10 @@ executable 7a
     hs-source-dirs:   7
     default-language: GHC2024
 
+executable 7b
+    import:           warnings
+    main-is:          b.hs
+    build-depends:    base ^>=4.20.2.0,data-memocombinators
+    ghc-options: -O2 -Wall
+    hs-source-dirs:   7
+    default-language: GHC2024
