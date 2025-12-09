@@ -127,3 +127,10 @@ executable 8b
     build-depends:    base ^>=4.20.2.0,split
     hs-source-dirs:   8
     default-language: GHC2024
+
+executable 9a
+    import:           warnings
+    main-is:          a.hs
+    build-depends:    base ^>=4.20.2.0,split
+    hs-source-dirs:   9
+    default-language: GHC2024
