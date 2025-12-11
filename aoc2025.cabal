@@ -141,3 +141,11 @@ executable 11a
     build-depends:    base ^>=4.20.2.0,split,unordered-containers,hashable
     hs-source-dirs:   11
     default-language: GHC2024
+
+executable 11b
+    import:           warnings
+    main-is:          b.hs
+    ghc-options: -O2 -Wall
+    build-depends:    base ^>=4.20.2.0,split,unordered-containers,hashable,data-memocombinators
+    hs-source-dirs:   11
+    default-language: GHC2024
