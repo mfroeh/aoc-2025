@@ -134,3 +134,10 @@ executable 9a
     build-depends:    base ^>=4.20.2.0,split
     hs-source-dirs:   9
     default-language: GHC2024
+
+executable 11a
+    import:           warnings
+    main-is:          a.hs
+    build-depends:    base ^>=4.20.2.0,split,unordered-containers,hashable
+    hs-source-dirs:   11
+    default-language: GHC2024
